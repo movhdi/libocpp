@@ -6,7 +6,7 @@ This is a C++ library implementation of OCPP for version 1.6, 2.0.1 and 2.1.
 (see [OCPP protocols at OCA website](https://openchargealliance.org/protocols/open-charge-point-protocol/)).
 The OCPP2.0.1 implementation of libocpp has been certified by the OCA for multiple hardware platforms.
 
-Libocpp's approach to implementing the OCPP protocol is to address as much functional requirements as possible as part of the library.
+Libocpp's approach to implementing the  OCPP protocol is to address as much functional requirements as possible as part of the library.
 Since OCPP is a protocol that affects, controls, and monitors many areas of a charging station's operation this library needs to be
 integrated with your charging station firmware.
 
@@ -29,8 +29,8 @@ See the [COMMUNITY.md](https://github.com/EVerest/EVerest/blob/main/COMMUNITY.md
 
 OCPP1.6 is fully implemented.
 
-| Feature Profile            | Supported |
-| -------------------------- | --------- |
+| Feature Profile            | Supported                 |
+| -------------------------- | ------------------------- |
 | Core                       | ✅ yes    |
 | Firmware Management        | ✅ yes    |
 | Local Auth List Management | ✅ yes    |
@@ -38,11 +38,11 @@ OCPP1.6 is fully implemented.
 | Smart Charging             | ✅ yes    |
 | Remote Trigger             | ✅ yes    |
 
-| Whitepapers & Application Notes                                                                                                                      | Supported |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| [OCPP 1.6 Security Whitepaper (3rd edition)](https://openchargealliance.org/wp-content/uploads/2023/11/OCPP-1.6-security-whitepaper-edition-3-2.zip) | ✅ yes    |
-| [Using ISO 15118 Plug & Charge with OCPP 1.6](https://openchargealliance.org/wp-content/uploads/2023/11/ocpp_1_6_ISO_15118_v10.pdf)                  | ✅ yes    |
-| [OCPP & California Pricing Requirements](https://openchargealliance.org/wp-content/uploads/2024/09/ocpp_and_dms_evse_regulation-v3.1.pdf)            | ✅ yes    |
+| Whitepapers & Application Notes                                                                                                                              | Supported              |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| [OCPP 1.6 Security Whitepaper (3rd edition)](https://openchargealliance.org/wp-content/uploads/2023/11/OCPP-1.6-security-whitepaper-edition-3-2.zip) | ✅ yes |
+| [Using ISO 15118 Plug & Charge with OCPP 1.6](https://openchargealliance.org/wp-content/uploads/2023/11/ocpp_1_6_ISO_15118_v10.pdf)                | ✅ yes                    |
+| [OCPP & California Pricing Requirements](https://openchargealliance.org/wp-content/uploads/2024/09/ocpp_and_dms_evse_regulation-v3.1.pdf)          | ✅ yes |
 
 ### CSMS Compatibility
 
@@ -85,30 +85,30 @@ The following table shows the known CSMS with which this library was tested.
 
 ### Supported Functional Blocks
 
-| Feature Profile                      | Supported               |
-| ------------------------------------ | ----------------------- |
-| A. Security                          | ✅ yes                  |
-| B. Provisioning                      | ✅ yes                  |
-| C. Authorization                     | ✅ yes                  |
-| D. LocalAuthorizationList Management | ✅ yes                  |
-| E. Transactions                      | ✅ yes                  |
-| F. RemoteControl                     | ✅ yes                  |
-| G. Availability                      | ✅ yes                  |
-| H. Reservation                       | ✅ yes                  |
-| I. TariffAndCost                     | ✅ yes                  |
-| J. MeterValues                       | ✅ yes                  |
-| K. SmartCharging                     | ✅ yes (except K11-K17) |
-| L. FirmwareManagement                | ✅ yes                  |
-| M. ISO 15118 CertificateManagement   | ✅ yes                  |
-| N. Diagnostics                       | ✅ yes                  |
-| O. DisplayMessage                    | ✅ yes                  |
-| P. DataTransfer                      | ✅ yes                  |
+| Feature Profile                      | Supported                 |
+| -------------------------------------| ------------------------- |
+| A. Security                          | ✅ yes  |
+| B. Provisioning                      | ✅ yes  |
+| C. Authorization                     | ✅ yes  |
+| D. LocalAuthorizationList Management | ✅ yes  |
+| E. Transactions                      | ✅ yes  |
+| F. RemoteControl                     | ✅ yes  |
+| G. Availability                      | ✅ yes  |
+| H. Reservation                       | ✅ yes                      |
+| I. TariffAndCost                     | ✅ yes  |
+| J. MeterValues                       | ✅ yes  |
+| K. SmartCharging                     | ✅ yes (except K11-K17)                       |
+| L. FirmwareManagement                | ✅ yes  |
+| M. ISO 15118 CertificateManagement   | ✅ yes  |
+| N. Diagnostics                       | ✅ yes  |
+| O. DisplayMessage                    | ✅ yes  |
+| P. DataTransfer                      | ✅ yes  |
 
 Check the [detailed current implementation status.](doc/v2/ocpp_2x_status.md).
 
-| Whitepapers & Application Notes                                                                                                           | Supported |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| [OCPP & California Pricing Requirements](https://openchargealliance.org/wp-content/uploads/2024/09/ocpp_and_dms_evse_regulation-v3.1.pdf) | ✅ yes    |
+| Whitepapers & Application Notes                                                                                                                              | Supported              |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| [OCPP & California Pricing Requirements](https://openchargealliance.org/wp-content/uploads/2024/09/ocpp_and_dms_evse_regulation-v3.1.pdf)          | ✅ yes                  |
 
 ### CSMS Compatibility OCPP 2.0.1
 
