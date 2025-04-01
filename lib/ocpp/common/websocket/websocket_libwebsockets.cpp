@@ -746,22 +746,15 @@ void WebsocketLibwebsockets::thread_websocket_client_loop(std::shared_ptr<Connec
                 ocpp_versions += conversions::ocpp_protocol_version_to_string(version);
             }
 
-            std::vector<char> address(uri.get_hostname().begin(), uri.get_hostname().end());
-            std::vector<char> path((uri.get_path() + uri.get_chargepoint_id()).begin(),
-                                   (uri.get_path() + uri.get_chargepoint_id()).end());
-            std::vector<char> protocol(ocpp_versions.begin(), ocpp_versions.end());
-            address.push_back('\0');
-            path.push_back('\0');
-            protocol.push_back('\0');
-
+            // TODO: No idea who releases the strdup?
             i.context = local_data->lws_ctx.get();
             i.port = uri.get_port();
-            i.address = address.data(); // Base address, as resolved by getnameinfo
-            i.path = path.data();       // Path of resource
+            i.address = strdup(uri.get_hostname().c_str()); // Base address, as resolved by getnameinfo
+            i.path = strdup((uri.get_path() + uri.get_chargepoint_id()).c_str()); // Path of resource
             i.host = i.address;
             i.origin = i.address;
             i.ssl_connection = ssl_connection;
-            i.protocol = protocol.data();
+            i.protocol = strdup(ocpp_versions.c_str());
             i.local_protocol_name = local_protocol_name;
             i.pwsi = &local_lws; // Will set the local_data->wsi to a valid value in case of a successful connect
             i.userdata = local_data.get(); // See lws_context 'user'
