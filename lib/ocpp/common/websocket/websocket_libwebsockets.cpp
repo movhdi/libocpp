@@ -702,7 +702,9 @@ void WebsocketLibwebsockets::thread_websocket_client_loop(std::shared_ptr<Connec
     if (local_data == nullptr) {
         EVLOG_AND_THROW(std::runtime_error("Null 'ConnectionData' in client thread, fatal error!"));
     }
-
+    std::vector<char> address;
+    std::vector<char> path;
+    std::vector<char> protocol;
     EVLOG_info << "Init client loop with ID: " << std::hex << std::this_thread::get_id();
     bool try_reconnect = true;
     std::vector<char> address{};
@@ -752,10 +754,6 @@ void WebsocketLibwebsockets::thread_websocket_client_loop(std::shared_ptr<Connec
             path.assign((uri.get_path() + uri.get_chargepoint_id()).begin(),
                         (uri.get_path() + uri.get_chargepoint_id()).end());
             protocol.assign(ocpp_versions.begin(), ocpp_versions.end());
-            // std::vector<char> address(uri.get_hostname().begin(), uri.get_hostname().end());
-            // std::vector<char> path((uri.get_path() + uri.get_chargepoint_id()).begin(),
-            //                        (uri.get_path() + uri.get_chargepoint_id()).end());
-            // std::vector<char> protocol(ocpp_versions.begin(), ocpp_versions.end());
             address.push_back('\0');
             path.push_back('\0');
             protocol.push_back('\0');
