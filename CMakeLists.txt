@@ -7,7 +7,7 @@ project(ocpp
 )
 
 find_package(everest-cmake 0.1 REQUIRED
-    PATHS ../checkout/everest-workspace/everest-cmake
+    PATHS ../everest-cmake
 )
 
 # options

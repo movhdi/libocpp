@@ -14,7 +14,7 @@ class MessageDispatcher : public MessageDispatcherInterface<MessageType> {
 public:
     MessageDispatcher(ocpp::MessageQueue<MessageType>& message_queue, ChargePointConfiguration& configuration,
                       std::atomic<RegistrationStatus>& registration_status) :
-        message_queue(message_queue), configuration(configuration), registration_status(registration_status){};
+        message_queue(message_queue), configuration(configuration), registration_status(registration_status) {};
     void dispatch_call(const json& call, bool triggered = false) override;
     std::future<ocpp::EnhancedMessage<MessageType>> dispatch_call_async(const json& call, bool triggered) override;
     void dispatch_call_result(const json& call_result) override;

@@ -46,7 +46,7 @@ public:
                  const std::chrono::seconds response_timeout) :
         context(functional_block_context),
         data_transfer_callback(data_transfer_callback),
-        response_timeout(response_timeout){};
+        response_timeout(response_timeout) {};
 
     void handle_message(const EnhancedMessage<MessageType>& message) override;
 

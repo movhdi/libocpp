@@ -13,7 +13,7 @@ namespace ocpp {
 template <typename T> class MessageDispatcherInterface {
 
 public:
-    virtual ~MessageDispatcherInterface(){};
+    virtual ~MessageDispatcherInterface() {};
 
     /// \brief Dispatches a Call message.
     /// \param call the OCPP Call message.

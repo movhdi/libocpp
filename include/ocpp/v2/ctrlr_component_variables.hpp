@@ -15,7 +15,7 @@ namespace v2 {
 ///
 struct RequiredComponentVariable : ComponentVariable {
     /// \brief Constructor
-    RequiredComponentVariable() : required_for({OcppProtocolVersion::v201, OcppProtocolVersion::v21}){};
+    RequiredComponentVariable() : required_for({OcppProtocolVersion::v201, OcppProtocolVersion::v21}) {};
 
     ///
     /// \brief RequiredComponentVariable
