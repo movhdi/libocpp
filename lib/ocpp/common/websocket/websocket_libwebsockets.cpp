@@ -705,7 +705,9 @@ void WebsocketLibwebsockets::thread_websocket_client_loop(std::shared_ptr<Connec
 
     EVLOG_info << "Init client loop with ID: " << std::hex << std::this_thread::get_id();
     bool try_reconnect = true;
-
+    std::vector<char> address{};
+    std::vector<char> path{};
+    std::vector<char> protocol{};
     do {
         if (!initialize_connection_options(local_data)) {
             EVLOG_error << "Could not initialize connection options.";
@@ -746,10 +748,14 @@ void WebsocketLibwebsockets::thread_websocket_client_loop(std::shared_ptr<Connec
                 ocpp_versions += conversions::ocpp_protocol_version_to_string(version);
             }
 
-            std::vector<char> address(uri.get_hostname().begin(), uri.get_hostname().end());
-            std::vector<char> path((uri.get_path() + uri.get_chargepoint_id()).begin(),
-                                   (uri.get_path() + uri.get_chargepoint_id()).end());
-            std::vector<char> protocol(ocpp_versions.begin(), ocpp_versions.end());
+            address.assign(uri.get_hostname().begin(), uri.get_hostname().end());
+            path.assign((uri.get_path() + uri.get_chargepoint_id()).begin(),
+                        (uri.get_path() + uri.get_chargepoint_id()).end());
+            protocol.assign(ocpp_versions.begin(), ocpp_versions.end());
+            // std::vector<char> address(uri.get_hostname().begin(), uri.get_hostname().end());
+            // std::vector<char> path((uri.get_path() + uri.get_chargepoint_id()).begin(),
+            //                        (uri.get_path() + uri.get_chargepoint_id()).end());
+            // std::vector<char> protocol(ocpp_versions.begin(), ocpp_versions.end());
             address.push_back('\0');
             path.push_back('\0');
             protocol.push_back('\0');
