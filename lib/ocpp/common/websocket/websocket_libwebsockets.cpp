@@ -707,9 +707,7 @@ void WebsocketLibwebsockets::thread_websocket_client_loop(std::shared_ptr<Connec
     std::vector<char> protocol;
     EVLOG_info << "Init client loop with ID: " << std::hex << std::this_thread::get_id();
     bool try_reconnect = true;
-    std::vector<char> address{};
-    std::vector<char> path{};
-    std::vector<char> protocol{};
+
     do {
         if (!initialize_connection_options(local_data)) {
             EVLOG_error << "Could not initialize connection options.";
@@ -755,7 +753,7 @@ void WebsocketLibwebsockets::thread_websocket_client_loop(std::shared_ptr<Connec
                         (uri.get_path() + uri.get_chargepoint_id()).end());
             protocol.assign(ocpp_versions.begin(), ocpp_versions.end());
             address.push_back('\0');
-            path.push_back('\0');
+            pastth.push_back('\0');
             protocol.push_back('\0');
 
             i.context = local_data->lws_ctx.get();
